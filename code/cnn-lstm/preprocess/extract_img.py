@@ -118,7 +118,7 @@ class VideoPreprocess():
                                 #         count))), right_eye)
                                 cv2.imwrite(os.path.join(opt.save_path, (
                                     'concat/N_both_eyes_area_frame_{}.jpg'.format(
-                                        count))),
+                                        count+350))),
                                             crop_eye)
                             else:
                                 # cv2.imwrite(os.path.join(opt.save_path, (
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     parser.add_argument('--name', type=str,
                         default='video1_B_channel_near_object',
                         help='inference size (pixels)')
-    parser.add_argument('--distance', type=str, default='far',
+    parser.add_argument('--distance', type=str, default='near',
                         help='测试的视频的哪一段，如果为近处，则为near 远处为far')
     parser.add_argument('--save_img', type=bool, default=True, help='是否保存每帧图像')
     parser.add_argument('--save_path', type=str,
